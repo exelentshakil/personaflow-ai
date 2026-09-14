@@ -372,7 +372,19 @@ Respond warmly, concisely, and with high technical precision. Keep responses to 
     let reply = res.content;
     try {
       const parsed = JSON.parse(res.content);
-      reply = parsed.reply || parsed.message || res.content;
+      if (typeof parsed === "string") {
+        reply = parsed;
+      } else if (parsed && typeof parsed === "object") {
+        reply =
+          parsed.reply ||
+          parsed.message ||
+          parsed.response?.message ||
+          (typeof parsed.response === "string" ? parsed.response : null) ||
+          parsed.text ||
+          parsed.answer ||
+          (Object.values(parsed).find((v) => typeof v === "string") as string) ||
+          res.content;
+      }
     } catch {
       // plain text
     }
