@@ -24,6 +24,9 @@ async function callOpenAI(
   }
 
   const startTime = Date.now();
+  const promptHasJson = (systemPrompt + " " + userPrompt).toLowerCase().includes("json");
+  const safeSystemPrompt = promptHasJson ? systemPrompt : `${systemPrompt}\nRespond strictly in valid JSON format.`;
+
   const response = await fetch("https://api.openai.com/v1/chat/completions", {
     method: "POST",
     headers: {
@@ -33,7 +36,7 @@ async function callOpenAI(
     body: JSON.stringify({
       model: "gpt-4o-mini",
       messages: [
-        { role: "system", content: systemPrompt },
+        { role: "system", content: safeSystemPrompt },
         { role: "user", content: userPrompt },
       ],
       temperature,
@@ -76,7 +79,7 @@ async function callGemini(
   }
 
   const startTime = Date.now();
-  const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+  const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
 
   const response = await fetch(endpoint, {
     method: "POST",
@@ -113,7 +116,7 @@ async function callGemini(
   return {
     content: cleaned,
     provider: "Google Gemini",
-    model: "gemini-2.0-flash",
+    model: "gemini-2.5-flash",
     latencyMs,
     tokens: {
       input: data.usageMetadata?.promptTokenCount || 460,
@@ -415,14 +418,14 @@ export async function checkAiHealth(): Promise<{
   };
 
   try {
-    const resO = await callOpenAI("System ping", "Respond with {\"status\":\"ok\"}");
+    const resO = await callOpenAI("System health check. Return JSON.", "Respond with {\"status\":\"ok\"}");
     result.openai = { active: true, latencyMs: resO.latencyMs };
   } catch (err) {
     result.openai = { active: false, error: (err as Error).message };
   }
 
   try {
-    const resG = await callGemini("System ping", "Respond with {\"status\":\"ok\"}");
+    const resG = await callGemini("System health check. Return JSON.", "Respond with {\"status\":\"ok\"}");
     result.gemini = { active: true, latencyMs: resG.latencyMs };
   } catch (err) {
     result.gemini = { active: false, error: (err as Error).message };
