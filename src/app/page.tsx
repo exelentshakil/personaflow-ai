@@ -35,11 +35,7 @@ const INITIAL_REPORT: PersonalizedReport = {
   id: "rep_init_01",
   reportCode: "PF-2026-9812",
   title: "Personalized Executive Longevity & Biomarker Dossier",
-  generatedAt: new Date().toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-  }),
+  generatedAt: "Sep 15, 2026",
   customerName: SAMPLE_PROFILES[0].fullName,
   pronounTag: `${SAMPLE_PROFILES[0].pronouns} (verified agreement)`,
   summary: `${SAMPLE_PROFILES[0].fullName} has structured an intensive 6-hour weekly wellness protocol targeting deep sleep restoration, circadian synchronization, and cortisol mitigation during high-stakes executive transitions. Their biomarker trajectory indicates optimal response to zone-2 cardiovascular training and cold thermogenesis.`,
@@ -114,7 +110,7 @@ const INITIAL_REPORT: PersonalizedReport = {
     model: "gpt-4o-mini-2024-07-18",
     latencyMs: 342,
     tokens: { input: 1420, output: 890 },
-    timestamp: new Date().toISOString(),
+    timestamp: "2026-09-15T00:00:00.000Z",
     cached: true,
   },
 };
@@ -128,6 +124,11 @@ export default function PersonaFlowApp() {
   const [reportCount, setReportCount] = useState<number>(14);
   const [activeProvider, setActiveProvider] = useState<string>("OpenAI gpt-4o-mini");
   const [workflowStepIndex, setWorkflowStepIndex] = useState<number>(5);
+  const [mounted, setMounted] = useState<boolean>(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Modals
   const [isBlueprintsOpen, setIsBlueprintsOpen] = useState<boolean>(false);
@@ -139,31 +140,31 @@ export default function PersonaFlowApp() {
   const [logs, setLogs] = useState<LogEntry[]>([
     {
       id: "log_01",
-      timestamp: new Date(Date.now() - 60000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" }),
+      timestamp: "11:42:15 PM",
       type: "INGEST",
       message: `Ingested customer profile for ${SAMPLE_PROFILES[0].fullName} (${SAMPLE_PROFILES[0].email})`,
     },
     {
       id: "log_02",
-      timestamp: new Date(Date.now() - 55000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" }),
+      timestamp: "11:42:20 PM",
       type: "PRONOUN",
       message: `Deterministic pronoun matrix resolved: [they/them] · verb agreement [are/have/do] locked`,
     },
     {
       id: "log_03",
-      timestamp: new Date(Date.now() - 40000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" }),
+      timestamp: "11:42:35 PM",
       type: "AI",
       message: `Dual-model inference dispatched: Primary OpenAI gpt-4o-mini executed in 342ms`,
     },
     {
       id: "log_04",
-      timestamp: new Date(Date.now() - 30000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" }),
+      timestamp: "11:42:45 PM",
       type: "PDF",
       message: `Executive vector PDF synthesized: [PF-2026-9812] (3 insights, 3-phase roadmap, zero middle void)`,
     },
     {
       id: "log_05",
-      timestamp: new Date(Date.now() - 20000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" }),
+      timestamp: "11:42:55 PM",
       type: "WEBHOOK",
       message: `Multi-channel delivery armed: Resend SMTP + Twilio SMS alert queued`,
     },
@@ -244,6 +245,17 @@ export default function PersonaFlowApp() {
     setCurrentProfile(p);
     addLog("INGEST", `Switched active customer profile to ${p.fullName} (${p.selectedCategory})`);
   };
+
+  if (!mounted) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[var(--color-bg)]">
+        <div className="flex items-center gap-2 text-sm font-semibold text-blue-600 font-mono">
+          <span className="h-2 w-2 rounded-full bg-blue-600 animate-ping" />
+          Initializing PersonaFlow AI Cockpit...
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col bg-[var(--color-bg)] text-[var(--color-text-primary)]">
