@@ -13,3 +13,4 @@ docs/*.pdf.png
 .env.local
 .vercel
 .env*
+*.tsbuildinfo

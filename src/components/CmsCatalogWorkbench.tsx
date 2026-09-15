@@ -264,11 +264,11 @@ export function CmsCatalogWorkbench({ onLogEvent }: CmsCatalogWorkbenchProps) {
             >
               <div>
                 <div className="flex items-center justify-between gap-1 mb-2">
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[var(--color-panel-subtle)] text-[var(--color-text-muted)]">
+                  <span className="text-xs font-mono px-2 py-0.5 rounded bg-[var(--color-panel-subtle)] text-[var(--color-text-muted)]">
                     {prod.billingInterval}
                   </span>
                   {prod.badge && (
-                    <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-50 text-blue-700 dark:bg-blue-950/40 dark:text-blue-300">
+                    <span className="text-xs font-bold px-2 py-0.5 rounded bg-blue-50 text-blue-700 dark:bg-blue-950/40 dark:text-blue-300">
                       {prod.badge}
                     </span>
                   )}
@@ -290,7 +290,7 @@ export function CmsCatalogWorkbench({ onLogEvent }: CmsCatalogWorkbenchProps) {
                     )}
                   </div>
                 </div>
-                <span className="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
+                <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
                   <CheckCircle className="h-3 w-3" />
                   Live
                 </span>
@@ -342,7 +342,7 @@ export function CmsCatalogWorkbench({ onLogEvent }: CmsCatalogWorkbenchProps) {
                     </td>
                     <td className="p-3">
                       <span
-                        className={`px-2 py-0.5 rounded text-[10px] font-semibold ${
+                        className={`px-2 py-0.5 rounded text-xs font-semibold ${
                           promo.status === "active"
                             ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
                             : "bg-slate-100 text-slate-600"

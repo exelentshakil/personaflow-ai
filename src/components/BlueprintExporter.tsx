@@ -290,7 +290,7 @@ volumes:
               </button>
             </div>
           </div>
-          <pre className="overflow-x-auto leading-relaxed text-[11px] text-slate-300">
+          <pre className="overflow-x-auto leading-relaxed text-xs text-slate-300">
             {activeBlueprint.content}
           </pre>
         </div>

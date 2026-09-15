@@ -6,16 +6,13 @@ import {
   Sparkles,
   Sun,
   Moon,
-  ShieldCheck,
   Zap,
-  Activity,
   Download,
   Calculator,
   Flame,
   Layers,
   MessageSquare,
   FileText,
-  Settings,
   UserCheck,
 } from "lucide-react";
 
@@ -56,7 +53,7 @@ export function Navbar({
                 <span className="text-base font-bold tracking-tight text-[var(--color-text-primary)]">
                   PersonaFlow<span className="text-blue-600">.ai</span>
                 </span>
-                <span className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:border-emerald-800">
+                <span className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:border-emerald-800">
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
                   Dual-AI Armed
                 </span>
@@ -67,7 +64,7 @@ export function Navbar({
             </div>
           </div>
 
-          {/* Nav Tabs */}
+          {/* Navigation Tabs */}
           <nav className="flex items-center gap-1 p-1 rounded-xl bg-[var(--color-panel-subtle)] border border-[var(--color-border)] overflow-x-auto shrink-0">
             <button
               onClick={() => setActiveTab("studio")}
@@ -117,35 +114,35 @@ export function Navbar({
 
           {/* Action Tools & Theme */}
           <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
-            {/* Quick Demo Trigger */}
+            {/* Run Pipeline Button */}
             <button
               onClick={onQuickDemo}
               disabled={isGenerating}
-              className="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-sm shadow-blue-500/20 transition-all disabled:opacity-50 whitespace-nowrap"
+              className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold text-white bg-blue-600 hover:bg-blue-500 shadow-sm shadow-blue-500/20 transition-all disabled:opacity-50 whitespace-nowrap"
             >
-              <Zap className="h-3.5 w-3.5" />
-              <span>Run Live Pipeline</span>
+              <Zap className="h-3.5 w-3.5 text-amber-300 fill-amber-300" />
+              <span>Pipeline</span>
             </button>
 
-            {/* Chaos Failover */}
+            {/* Disaster Recovery / Chaos Failover */}
             <button
               onClick={onOpenChaos}
-              className={`inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition-all whitespace-nowrap ${
+              className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition-all whitespace-nowrap ${
                 chaosActive
                   ? "bg-rose-50 text-rose-700 border-rose-300 dark:bg-rose-950/40 dark:text-rose-300 dark:border-rose-800 animate-pulse"
                   : "bg-[var(--color-panel)] text-[var(--color-text-secondary)] border-[var(--color-border)] hover:bg-[var(--color-panel-subtle)]"
               }`}
-              title="Disaster Recovery Chaos Test"
+              title="Disaster Recovery Chaos Failover Test"
             >
               <Flame className="h-3.5 w-3.5 text-rose-500" />
               <span className="hidden sm:inline">Failover</span>
             </button>
 
-            {/* ROI Calculator */}
+            {/* Token Burn & ROI Calculator */}
             <button
               onClick={onOpenRoi}
-              className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-[var(--color-panel)] text-[var(--color-text-secondary)] border border-[var(--color-border)] hover:bg-[var(--color-panel-subtle)] transition-all whitespace-nowrap"
-              title="Token Burn & ROI Calculator"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-[var(--color-panel)] text-[var(--color-text-secondary)] border border-[var(--color-border)] hover:bg-[var(--color-panel-subtle)] transition-all whitespace-nowrap"
+              title="Compute Economics & Token Cost Calculator"
             >
               <Calculator className="h-3.5 w-3.5 text-amber-500" />
               <span className="hidden sm:inline">ROI</span>
@@ -154,7 +151,7 @@ export function Navbar({
             {/* Blueprints Exporter */}
             <button
               onClick={onOpenBlueprints}
-              className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-[var(--color-panel)] text-[var(--color-text-secondary)] border border-[var(--color-border)] hover:bg-[var(--color-panel-subtle)] transition-all whitespace-nowrap"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-[var(--color-panel)] text-[var(--color-text-secondary)] border border-[var(--color-border)] hover:bg-[var(--color-panel-subtle)] transition-all whitespace-nowrap"
               title="Download Production Blueprints (n8n, Make, Inngest)"
             >
               <Download className="h-3.5 w-3.5 text-blue-500" />

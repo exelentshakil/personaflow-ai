@@ -115,7 +115,7 @@ export function ProfileAwareChatbot({
               <h4 className="text-xs sm:text-sm font-bold text-blue-950 dark:text-blue-200">
                 Active Customer Awareness Context
               </h4>
-              <span className="px-2 py-0.5 rounded text-[11px] font-mono font-semibold bg-white dark:bg-slate-900 border border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-300">
+              <span className="px-2 py-0.5 rounded text-xs font-mono font-semibold bg-white dark:bg-slate-900 border border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-300">
                 Pronouns: {currentProfile.pronouns}
               </span>
             </div>
@@ -164,7 +164,7 @@ export function ProfileAwareChatbot({
                   </div>
 
                   <div
-                    className={`flex items-center gap-2 text-[11px] font-mono text-[var(--color-text-muted)] ${
+                    className={`flex items-center gap-2 text-xs font-mono text-[var(--color-text-muted)] ${
                       isUser ? "justify-end" : "justify-start"
                     }`}
                   >
@@ -197,7 +197,7 @@ export function ProfileAwareChatbot({
 
         {/* Quick Prompt Chips */}
         <div className="px-4 py-2 bg-[var(--color-panel-subtle)]/50 border-t border-[var(--color-border)] flex items-center gap-2 overflow-x-auto">
-          <span className="text-[11px] font-semibold uppercase tracking-wider text-[var(--color-text-muted)] whitespace-nowrap shrink-0">
+          <span className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)] whitespace-nowrap shrink-0">
             Suggested Prompts:
           </span>
           {quickPrompts.map((qp, idx) => (

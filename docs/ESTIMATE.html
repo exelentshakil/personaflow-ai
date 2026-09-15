@@ -6,7 +6,7 @@
   <style>
     @page {
       size: letter portrait;
-      margin: 8mm 9mm 8mm 9mm;
+      margin: 6mm 8.5mm 6mm 8.5mm;
     }
     * {
       box-sizing: border-box;
@@ -23,15 +23,15 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: #0f172a;
-      line-height: 1.36;
-      font-size: 9.8px;
+      line-height: 1.34;
+      font-size: 9.6px;
     }
 
-    /* The 6 Direct Flex Children Architecture - Uniform Natural Spacing */
+    /* The 6 Direct Flex Children Architecture - Mandatory Zero Middle Void */
     .page-container {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      justify-content: space-between;
       height: 100%;
       box-sizing: border-box;
     }
@@ -43,7 +43,7 @@
       align-items: center;
       gap: 12px;
       border-bottom: 2px solid #2563eb;
-      padding-bottom: 6px;
+      padding-bottom: 5px;
     }
     .header-left {
       flex: 1;
@@ -59,16 +59,16 @@
       white-space: nowrap;
     }
     h1 {
-      font-size: 15px;
+      font-size: 14.5px;
       font-weight: 800;
       color: #0f172a;
-      margin: 0 0 2px 0;
+      margin: 0 0 1.5px 0;
       letter-spacing: -0.02em;
       line-height: 1.15;
       white-space: nowrap;
     }
     .subtitle {
-      font-size: 8.8px;
+      font-size: 8.6px;
       color: #475569;
       margin: 0;
       line-height: 1.25;
@@ -79,10 +79,10 @@
       background: #f8fafc;
       border: 1px solid #cbd5e1;
       border-radius: 6px;
-      padding: 6px 10px;
+      padding: 5px 9px;
       font-size: 8.4px;
       text-align: right;
-      line-height: 1.38;
+      line-height: 1.36;
       box-shadow: 0 1px 2px rgba(0,0,0,0.02);
       white-space: nowrap;
     }
@@ -95,29 +95,18 @@
       color: #059669;
       border: 1px solid #a7f3d0;
       font-weight: 700;
-      padding: 1.5px 5.5px;
+      padding: 1px 5px;
       border-radius: 9999px;
       font-size: 7.8px;
       text-transform: uppercase;
       margin-left: 3px;
     }
 
-    /* 2. Executive Problem & Principle Callout */
-    .exec-summary {
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      border-left: 3.5px solid #2563eb;
-      padding: 7px 10px;
-      border-radius: 4px;
-      font-size: 8.6px;
-      color: #1e3a8a;
-      line-height: 1.36;
+    /* 2. Scope Table */
+    .scope-block {
+      display: flex;
+      flex-direction: column;
     }
-    .exec-summary strong {
-      color: #1d4ed8;
-    }
-
-    /* 3. Scope Table */
     .section-header {
       display: flex;
       justify-content: space-between;
@@ -125,7 +114,7 @@
       margin-bottom: 3.5px;
     }
     .section-title {
-      font-size: 9.8px;
+      font-size: 9.6px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -135,7 +124,7 @@
       margin: 0;
     }
     .section-meta {
-      font-size: 8.4px;
+      font-size: 8.2px;
       color: #64748b;
       font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
     }
@@ -148,34 +137,34 @@
       color: #334155;
       font-weight: 700;
       text-transform: uppercase;
-      font-size: 8.4px;
+      font-size: 8.2px;
       letter-spacing: 0.04em;
       border: 1px solid #cbd5e1;
-      padding: 5px 7px;
+      padding: 4px 6px;
       text-align: left;
     }
     td {
       border: 1px solid #e2e8f0;
-      padding: 6.8px 7px;
-      font-size: 8.8px;
+      padding: 4.5px 6px;
+      font-size: 8.6px;
       vertical-align: top;
     }
     .phase-num {
       font-weight: 800;
       color: #1e293b;
-      font-size: 8.8px;
+      font-size: 8.6px;
       white-space: nowrap;
     }
     .phase-name {
       font-weight: 700;
       color: #0f172a;
-      font-size: 9.3px;
+      font-size: 9.1px;
     }
     .phase-desc {
       color: #475569;
-      font-size: 8.3px;
-      margin-top: 2.2px;
-      line-height: 1.3;
+      font-size: 8.1px;
+      margin-top: 1px;
+      line-height: 1.25;
     }
     .phase-0-row {
       background: #f0fdf4;
@@ -192,34 +181,34 @@
     }
     .total-row td {
       border: 1px solid #0f172a;
-      padding: 6.5px 7px;
-      font-size: 9.2px;
+      padding: 5px 6px;
+      font-size: 9px;
     }
 
-    /* 4. 2-Column Grid */
+    /* 3. 2-Column Grid */
     .grid-2col {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8px;
+      gap: 7px;
     }
     .card-box {
       border: 1px solid #cbd5e1;
       border-radius: 6px;
       background: #f8fafc;
-      padding: 8px 11px;
+      padding: 6px 9px;
     }
     .card-box-title {
-      font-size: 8.9px;
+      font-size: 8.7px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       color: #1e293b;
-      margin: 0 0 4.5px 0;
+      margin: 0 0 3.5px 0;
       display: flex;
       align-items: center;
       gap: 4px;
       border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 3px;
+      padding-bottom: 2.5px;
     }
     .milestone-item {
       display: flex;
@@ -227,8 +216,8 @@
       align-items: center;
       gap: 6px;
       border-bottom: 1px dotted #cbd5e1;
-      padding: 3.6px 0;
-      font-size: 8.3px;
+      padding: 2.5px 0;
+      font-size: 8.1px;
     }
     .milestone-item:last-child {
       border-bottom: none;
@@ -244,12 +233,12 @@
       white-space: nowrap;
     }
     .guardrail-item {
-      font-size: 8.2px;
+      font-size: 8.1px;
       color: #334155;
-      margin-bottom: 3.5px;
-      padding-left: 11px;
+      margin-bottom: 2.5px;
+      padding-left: 10px;
       position: relative;
-      line-height: 1.28;
+      line-height: 1.24;
     }
     .guardrail-item:last-child {
       margin-bottom: 0;
@@ -263,31 +252,96 @@
       font-size: 7.5px;
     }
 
-    /* 5. Commercial Terms Section */
+    /* 4. Commercial Terms Section */
     .terms-box {
       border: 1px solid #cbd5e1;
       border-radius: 6px;
       background: #ffffff;
-      padding: 8px 11px;
+      padding: 6px 9px;
     }
     .terms-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
+      gap: 8px;
     }
     .term-col {
-      font-size: 8px;
-      line-height: 1.28;
+      font-size: 7.8px;
+      line-height: 1.24;
     }
     .term-title {
       font-weight: 800;
       color: #2563eb;
       text-transform: uppercase;
-      font-size: 7.9px;
-      margin-bottom: 2.5px;
+      font-size: 7.8px;
+      margin-bottom: 1.5px;
     }
     .term-body {
       color: #475569;
+    }
+
+    /* 5. Formal Acceptance Authorization Block */
+    .auth-block {
+      border: 1px solid #94a3b8;
+      border-radius: 6px;
+      background: #f8fafc;
+      padding: 6.5px 10px;
+    }
+    .auth-title {
+      font-size: 8.4px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #0f172a;
+      margin-bottom: 3.5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 2.5px;
+    }
+    .auth-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .auth-party {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5px;
+      font-size: 7.9px;
+    }
+    .auth-party-title {
+      font-weight: 700;
+      color: #1e293b;
+    }
+    .auth-sign-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 1px solid #94a3b8;
+      padding-bottom: 1px;
+      margin-top: 1.5px;
+      height: 20px;
+    }
+    .auth-sign-field {
+      font-family: 'Brush Script MT', 'Apple Chancery', 'Segoe Script', cursive;
+      font-size: 14.5px;
+      color: #1e3a8a;
+      line-height: 1;
+    }
+    .auth-date-field {
+      font-family: ui-monospace, monospace;
+      font-size: 8px;
+      color: #334155;
+      font-weight: 600;
+      width: 75px;
+      text-align: center;
+    }
+    .auth-label {
+      font-size: 7px;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
     }
 
     /* 6. Executive Signature Footer */
@@ -297,18 +351,17 @@
       align-items: center;
       gap: 10px;
       border-top: 1.5px solid #cbd5e1;
-      padding-top: 6px;
-      margin-top: auto;
+      padding-top: 5px;
     }
     .footer-founder {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 9px;
       flex: 1;
     }
     .founder-avatar {
-      width: 38px;
-      height: 38px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       object-fit: cover;
       border: 1.5px solid #2563eb;
@@ -317,18 +370,18 @@
     .founder-info {
       display: flex;
       flex-direction: column;
-      gap: 1.2px;
+      gap: 1px;
     }
     .founder-name {
-      font-size: 9.6px;
+      font-size: 9.3px;
       color: #0f172a;
     }
     .founder-company {
-      font-size: 8.6px;
+      font-size: 8.4px;
       color: #2563eb;
     }
     .founder-sub {
-      font-size: 7.8px;
+      font-size: 7.7px;
       color: #64748b;
       line-height: 1.2;
     }
@@ -336,23 +389,23 @@
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      gap: 3px;
+      gap: 2.5px;
       flex-shrink: 0;
     }
     .business-logo {
-      height: 18px;
+      height: 17px;
       width: auto;
       object-fit: contain;
     }
     .demo-badge {
-      font-size: 7.8px;
+      font-size: 7.7px;
       font-weight: 700;
       color: #2563eb;
       text-decoration: none;
       font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
       background: #eff6ff;
       border: 1px solid #bfdbfe;
-      padding: 1.5px 6px;
+      padding: 1px 5px;
       border-radius: 4px;
     }
   </style>
@@ -363,89 +416,98 @@
   <!-- 1. Executive Header -->
   <div class="header">
     <div class="header-left">
-      <div class="brand-title">Production Scope &amp; Formal Milestone Estimate</div>
+      <div class="brand-title">BarakahSoft LLC • Systems Architecture • Ref #BS-2026-PERS-092</div>
       <h1>PersonaFlow AI — Consumer Personalization Platform</h1>
-      <p class="subtitle">Autonomous Profile Intake • Strict Pronoun Matrix • PDF Generation • Zero-Code CMS Workbench</p>
+      <p class="subtitle">Autonomous Profile Intake • Strict Pronoun Matrix • Vector PDF Engine • Zero-Code CMS Workbench</p>
     </div>
     <div class="meta-card">
       <div>Client: <strong>Private Consumer AI Founder (Albemarle, NC)</strong></div>
       <div>Date: <strong>September 15, 2026</strong> • Delivery: <strong>12 Calendar Days</strong></div>
-      <div>Turnkey Investment: <strong>$1,500.00 Fixed Price</strong> <span class="live-badge">Proof-of-Concept Live</span></div>
+      <div>Turnkey Investment: <strong>$1,500.00 Fixed Price</strong> <span class="live-badge">Verified &amp; Audited</span></div>
     </div>
   </div>
 
-  <!-- 2. Executive Architectural Guarantee -->
-  <div class="exec-summary">
-    <strong>Architectural Defensibility Guarantee:</strong> Generic consumer AI apps fail on awkward pronoun hallucinations and rigid codebases that require developer deployment for simple catalog updates. Our decoupled architecture enforces <strong>100% deterministic pronoun and verb agreement</strong> across third-person dossier generation and second-person direct concierge chat, pairs an <strong>automated vector PDF compilation engine</strong> with simulated multi-channel dispatch (Resend SMTP + Twilio SMS), and provides operators with a <strong>zero-code CMS workbench</strong> to publish products, pricing intervals, and promo codes without writing a line of code.
-  </div>
-
-  <!-- 3. Scope Table (Phase 0 + Milestones 1-4) -->
-  <div>
+  <!-- 2. Scope Table -->
+  <div class="scope-block">
     <div class="section-header">
-      <h3 class="section-title">Turnkey Production Milestones &amp; Fixed-Price Scope</h3>
-      <span class="section-meta">TOTAL: $1,500.00 FIXED • 12 CALENDAR DAYS</span>
+      <h2 class="section-title">Milestone Scope &amp; Fixed-Price Delivery Schedule</h2>
+      <div class="section-meta">Live Demo: https://personaflow-ai-phi.vercel.app</div>
     </div>
     <table>
       <thead>
         <tr>
           <th style="width: 14%;">Milestone</th>
-          <th style="width: 61%;">Deliverables &amp; Technical Architecture</th>
-          <th style="width: 12%;">Timeline</th>
-          <th style="width: 13%; text-align: right;">Escrow</th>
+          <th style="width: 55%;">Deliverables &amp; Technical Specifications</th>
+          <th style="width: 13%;">Timeline</th>
+          <th style="width: 8%;">Type</th>
+          <th style="width: 10%; text-align: right;">Escrow</th>
         </tr>
       </thead>
       <tbody>
         <tr class="phase-0-row">
-          <td class="phase-num phase-0-badge">Milestone 1<br><span style="font-size: 7.6px; font-weight: normal; color: #166534;">Intake &amp; Schema</span></td>
+          <td class="phase-num phase-0-badge">Phase 0<br><span style="font-size: 7.4px; font-weight: normal; color: #166534;">Live Cockpit</span></td>
+          <td>
+            <div class="phase-name">Interactive Architecture Prototype &amp; Live Cockpit</div>
+            <div class="phase-desc">Next.js 15.5 App Router, Tailwind v4 design tokens, real dual-provider AI engine (OpenAI gpt-4o-mini + Gemini 2.5 Flash), interactive pronoun studio, live PDF preview, CMS workbench, and 2FA.</div>
+          </td>
+          <td style="font-family: ui-monospace, monospace; font-size: 8px; color: #166534;">0.5 hrs (&lt;30m)</td>
+          <td style="font-family: ui-monospace, monospace; font-size: 8px; color: #166534;">$0.00</td>
+          <td style="font-family: ui-monospace, monospace; font-weight: 800; color: #166534; text-align: right;">$0.00 <span style="font-size: 7.2px;">(Live)</span></td>
+        </tr>
+        <tr>
+          <td class="phase-num">Milestone 1<br><span style="font-size: 7.4px; font-weight: normal; color: #64748b;">Intake Engine</span></td>
           <td>
             <div class="phase-name">Intake Engine &amp; Deterministic Pronoun Matrix</div>
-            <div class="phase-desc">Interactive profile studio, Zod validation schema, deterministic pronoun resolver (they/them, she/her, he/him, custom ze/zir) with strict subject-verb agreement (is/are, has/have, does/do), prompt template interpolation engine, and encrypted localStorage persistence.</div>
+            <div class="phase-desc">Interactive customer intake studio, Zod defensive schema, deterministic pronoun resolver (they/them, she/her, he/him, custom ze/zir) with strict verb agreement (is/are, has/have, does/do), template engine, and encrypted localStorage.</div>
           </td>
-          <td style="font-family: ui-monospace, monospace; font-size: 8.2px; color: #166534;">Days 1–3</td>
-          <td style="font-family: ui-monospace, monospace; font-weight: 800; color: #166534; text-align: right;">$375.00</td>
-        </tr>
-        <tr>
-          <td class="phase-num">Milestone 2<br><span style="font-size: 7.6px; font-weight: normal; color: #64748b;">Dual-Model AI</span></td>
-          <td>
-            <div class="phase-name">Dual-Model AI Orchestrator &amp; Conversational Concierge</div>
-            <div class="phase-desc">Zero-SDK native HTTP inference pipeline calling OpenAI gpt-4o-mini (structured JSON mode), sub-second circuit-breaker failover to Google Gemini 2.5 Flash, offline deterministic rule engine fallback, and profile-aware conversational AI chatbot.</div>
-          </td>
-          <td style="font-family: ui-monospace, monospace; font-size: 8.2px;">Days 4–6</td>
+          <td style="font-family: ui-monospace, monospace; font-size: 8px;">Days 1–3</td>
+          <td style="font-family: ui-monospace, monospace; font-size: 8px;">Fixed</td>
           <td style="font-family: ui-monospace, monospace; font-weight: 800; text-align: right;">$375.00</td>
         </tr>
         <tr>
-          <td class="phase-num">Milestone 3<br><span style="font-size: 7.6px; font-weight: normal; color: #64748b;">PDF &amp; Delivery</span></td>
+          <td class="phase-num">Milestone 2<br><span style="font-size: 7.4px; font-weight: normal; color: #64748b;">Dual-Model AI</span></td>
+          <td>
+            <div class="phase-name">Dual-Model AI Orchestrator &amp; Concierge</div>
+            <div class="phase-desc">Zero-SDK native HTTP inference pipeline calling OpenAI gpt-4o-mini (JSON mode), sub-second circuit-breaker failover to Google Gemini 2.5 Flash, offline deterministic rule engine fallback, and profile-aware conversational AI concierge.</div>
+          </td>
+          <td style="font-family: ui-monospace, monospace; font-size: 8px;">Days 4–6</td>
+          <td style="font-family: ui-monospace, monospace; font-size: 8px;">Fixed</td>
+          <td style="font-family: ui-monospace, monospace; font-weight: 800; text-align: right;">$375.00</td>
+        </tr>
+        <tr>
+          <td class="phase-num">Milestone 3<br><span style="font-size: 7.4px; font-weight: normal; color: #64748b;">PDF &amp; Delivery</span></td>
           <td>
             <div class="phase-name">Automated Vector PDF Dossier &amp; Multi-Channel Dispatch</div>
-            <div class="phase-desc">High-density executive PDF layout (summary, 3 core insights, 3-phase roadmap, risk matrix) with print-ready vector styling and zero middle void. Resend SMTP email and Twilio SMS notification triggers, plus user security center with 2FA TOTP setup.</div>
+            <div class="phase-desc">High-density executive PDF layout (summary, 3 insights, 3-phase roadmap, risk matrix) with print-ready vector styling and zero middle void. Resend SMTP email and Twilio SMS notification triggers, plus 2FA TOTP security center.</div>
           </td>
-          <td style="font-family: ui-monospace, monospace; font-size: 8.2px;">Days 7–9</td>
+          <td style="font-family: ui-monospace, monospace; font-size: 8px;">Days 7–9</td>
+          <td style="font-family: ui-monospace, monospace; font-size: 8px;">Fixed</td>
           <td style="font-family: ui-monospace, monospace; font-weight: 800; text-align: right;">$375.00</td>
         </tr>
         <tr>
-          <td class="phase-num">Milestone 4<br><span style="font-size: 7.6px; font-weight: normal; color: #64748b;">CMS &amp; Deploy</span></td>
+          <td class="phase-num">Milestone 4<br><span style="font-size: 7.4px; font-weight: normal; color: #64748b;">CMS &amp; Deploy</span></td>
           <td>
             <div class="phase-name">Zero-Code CMS Workbench, Promo Codes &amp; Production Handover</div>
-            <div class="phase-desc">Operator workbench for publishing dynamic services, prices, and features without code changes. Promo code validation engine with discount calculation. Production Vercel deployment, CI/CD pipeline, turnkey blueprints (n8n, Make, Inngest, Docker), and 30-day warranty.</div>
+            <div class="phase-desc">Operator workbench for publishing dynamic services, prices, and features without code changes. Promo code validation engine. Production Vercel deployment, CI/CD pipeline, turnkey blueprints (n8n, Make, Inngest, Docker), and 30-day warranty.</div>
           </td>
-          <td style="font-family: ui-monospace, monospace; font-size: 8.2px;">Days 10–12</td>
+          <td style="font-family: ui-monospace, monospace; font-size: 8px;">Days 10–12</td>
+          <td style="font-family: ui-monospace, monospace; font-size: 8px;">Fixed</td>
           <td style="font-family: ui-monospace, monospace; font-weight: 800; text-align: right;">$375.00</td>
         </tr>
         <tr class="total-row">
-          <td colspan="2" style="text-transform: uppercase; letter-spacing: 0.05em; font-size: 8.8px;">Total Turnkey Production Commitment (4 Phased Milestones)</td>
-          <td style="font-family: ui-monospace, monospace; font-size: 8.8px;">12 Days</td>
-          <td style="font-family: ui-monospace, monospace; font-size: 9.8px; text-align: right; color: #93c5fd;">$1,500.00</td>
+          <td colspan="2" style="text-transform: uppercase; letter-spacing: 0.05em; font-size: 8.6px;">Total Turnkey Production Commitment (4 Milestones + 30-Day SLA)</td>
+          <td style="font-family: ui-monospace, monospace; font-size: 8.6px;">12 Days</td>
+          <td style="font-family: ui-monospace, monospace; font-size: 8.6px;">Fixed</td>
+          <td style="font-family: ui-monospace, monospace; font-size: 9.6px; text-align: right; color: #93c5fd;">$1,500.00</td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <!-- 4. 2-Column Grid: Escrow Schedule & Systems Guardrails -->
+  <!-- 3. 2-Column Grid: Escrow Schedule & Systems Guardrails -->
   <div class="grid-2col">
     <div class="card-box">
-      <div class="card-box-title">
-        <span>Phased Escrow Release Gates</span>
-      </div>
+      <div class="card-box-title">Phased Escrow Release Gates</div>
       <div class="milestone-item">
         <span class="milestone-name">Milestone 1: Intake &amp; Pronoun Matrix Complete</span>
         <span class="milestone-val">$375.00 (25%)</span>
@@ -465,9 +527,7 @@
     </div>
 
     <div class="card-box">
-      <div class="card-box-title">
-        <span>Systems Engineering Guardrails &amp; SLAs</span>
-      </div>
+      <div class="card-box-title">Architecture Guardrails &amp; Performance Guarantees</div>
       <div class="guardrail-item"><strong>Grammar Guard:</strong> 100.0% deterministic pronoun agreement before and after prompt generation.</div>
       <div class="guardrail-item"><strong>Dual-Model Failover:</strong> Sub-second circuit-breaker between OpenAI and Gemini with 99.99% SLA.</div>
       <div class="guardrail-item"><strong>Zero Code Overhead:</strong> Operators add new products, pricing tiers, and promo codes in seconds.</div>
@@ -475,24 +535,60 @@
     </div>
   </div>
 
-  <!-- 5. Commercial Terms Section -->
+  <!-- 4. Commercial Terms & Conditions -->
   <div class="terms-box">
+    <div class="card-box-title" style="margin-bottom: 3.5px;">Commercial Terms &amp; Production Engagement Conditions</div>
     <div class="terms-grid">
       <div class="term-col">
-        <div class="term-title">100% IP Ownership</div>
-        <div class="term-body">All code, prompts, and documentation belong exclusively to the client upon milestone settlement. Zero vendor lock-in.</div>
+        <div class="term-title">Escrow Milestones</div>
+        <div class="term-body">100% milestone-based on Upwork. Funds deposited in escrow per phase and released strictly upon verified staging sign-off.</div>
       </div>
       <div class="term-col">
-        <div class="term-title">Guaranteed Turnaround</div>
-        <div class="term-body">Full 12 calendar day delivery schedule with daily async progress updates and staging deployments.</div>
+        <div class="term-title">Full IP Ownership</div>
+        <div class="term-body">Complete copyright, source code, Git repositories, architectural blueprints, and environment configurations transfer to Client.</div>
       </div>
       <div class="term-col">
-        <div class="term-title">30-Day Post-Launch Warranty</div>
-        <div class="term-body">Includes bug fixes, prompt fine-tuning, and zero-charge platform support for 30 calendar days following launch.</div>
+        <div class="term-title">30-Day Hypercare SLA</div>
+        <div class="term-body">Includes 30 days of complimentary post-deployment monitoring, prompt fine-tuning, and priority bug resolution at zero cost.</div>
       </div>
       <div class="term-col">
         <div class="term-title">Turnkey Portability</div>
         <div class="term-body">Includes complete self-hosting blueprints for Docker, Inngest durable workflows, Make.com, and n8n nodes.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Formal Acceptance Authorization -->
+  <div class="auth-block">
+    <div class="auth-title">
+      <span>Formal Authorization &amp; Engagement Acceptance</span>
+      <span style="font-weight: 500; font-size: 7.4px; color: #475569;">Binding upon signature by authorized representatives</span>
+    </div>
+    <div class="auth-grid">
+      <div class="auth-party">
+        <div class="auth-party-title">Authorized Provider: BarakahSoft LLC (Wyoming, USA)</div>
+        <div>Signatory: <strong>Shakil Ahmed</strong> • Principal Systems Architect &amp; Founder</div>
+        <div class="auth-sign-line">
+          <div class="auth-sign-field">Shakil Ahmed</div>
+          <div class="auth-date-field">15 Sep 2026</div>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <span class="auth-label">Authorized Provider Signature</span>
+          <span class="auth-label" style="width: 75px; text-align: center;">Date</span>
+        </div>
+      </div>
+
+      <div class="auth-party">
+        <div class="auth-party-title">Authorized Client: Private Consumer AI Founder (Albemarle, NC)</div>
+        <div>Signatory: <strong>Client Representative</strong> • Executive Sponsor</div>
+        <div class="auth-sign-line">
+          <div class="auth-sign-field" style="color: #64748b; font-family: inherit; font-size: 8.2px; font-style: italic;">[ Accepted via Upwork Contract Offer / Sign-off ]</div>
+          <div class="auth-date-field">___ / ___ / 2026</div>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <span class="auth-label">Authorized Client Signature</span>
+          <span class="auth-label" style="width: 75px; text-align: center;">Date</span>
+        </div>
       </div>
     </div>
   </div>

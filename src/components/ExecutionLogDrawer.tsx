@@ -62,12 +62,12 @@ export function ExecutionLogDrawer({
           <span className="text-xs font-mono font-bold text-[var(--color-text-primary)] truncate">
             Live Execution Log &amp; Telemetry Stream
           </span>
-          <span className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-mono bg-emerald-50 text-emerald-700 border border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:border-emerald-800">
+          <span className="hidden sm:inline-flex items-center gap-1 px-2 py-0.5 rounded text-xs font-mono bg-emerald-50 text-emerald-700 border border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:border-emerald-800">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
             200 OK • 0 Flaky Drops
           </span>
           {chaosMode && (
-            <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-rose-100 text-rose-700 dark:bg-rose-950 dark:text-rose-300">
+            <span className="px-2 py-0.5 rounded text-xs font-mono font-bold bg-rose-100 text-rose-700 dark:bg-rose-950 dark:text-rose-300">
               CHAOS MODE ACTIVE
             </span>
           )}
@@ -93,7 +93,7 @@ export function ExecutionLogDrawer({
                 </div>
               ) : (
                 logs.map((log) => (
-                  <div key={log.id} className="flex items-start gap-2 leading-relaxed text-[11px]">
+                  <div key={log.id} className="flex items-start gap-2 leading-relaxed text-xs">
                     <span className="text-slate-500 shrink-0">[{log.timestamp}]</span>
                     <span
                       className={`font-bold shrink-0 ${
@@ -118,7 +118,7 @@ export function ExecutionLogDrawer({
 
             {/* Copyable cURL API Box */}
             <div className="w-full md:w-80 p-3 rounded-lg bg-slate-900 border border-slate-800 space-y-2 shrink-0">
-              <div className="flex items-center justify-between text-[11px] font-bold text-slate-400">
+              <div className="flex items-center justify-between text-xs font-bold text-slate-400">
                 <span>Direct API Endpoint</span>
                 <button
                   type="button"
@@ -129,7 +129,7 @@ export function ExecutionLogDrawer({
                   <span>{copiedCurl ? "Copied" : "Copy cURL"}</span>
                 </button>
               </div>
-              <pre className="text-[10px] text-slate-300 overflow-x-auto p-2 bg-slate-950 rounded border border-slate-800/80">
+              <pre className="text-xs text-slate-300 overflow-x-auto p-2 bg-slate-950 rounded border border-slate-800/80">
                 {curlCommand}
               </pre>
             </div>

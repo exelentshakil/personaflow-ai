@@ -194,7 +194,7 @@ export function ChaosOutageSimulator({
           {/* Test Execution Output */}
           {chaosLog.length > 0 && (
             <div className="p-4 rounded-xl bg-slate-950 text-slate-300 font-mono text-xs space-y-1.5 border border-slate-800">
-              <div className="text-[11px] text-slate-500 uppercase tracking-wider mb-2 border-b border-slate-800 pb-1">
+              <div className="text-xs text-slate-500 uppercase tracking-wider mb-2 border-b border-slate-800 pb-1">
                 Chaos Execution Log
               </div>
               {chaosLog.map((line, idx) => (

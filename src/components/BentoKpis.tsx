@@ -28,7 +28,7 @@ export function BentoKpis({
               {lastLatency}<span className="text-sm font-sans font-medium text-[var(--color-text-muted)] ml-1">ms</span>
             </div>
             <p className="text-xs text-[var(--color-text-muted)] mt-0.5 truncate font-mono">
-              {providerName.includes("OpenAI") ? "gpt-4o-mini" : "gemini-2.0-flash"}
+              {providerName.includes("OpenAI") ? "gpt-4o-mini" : "gemini-2.5-flash"}
             </p>
           </div>
 

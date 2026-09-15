@@ -166,10 +166,10 @@ export function AccountSecurityCenter({
               </div>
 
               <div className="p-4 bg-white rounded-lg border border-slate-200 flex flex-col items-center justify-center space-y-2 text-slate-900">
-                <div className="h-28 w-28 border-2 border-slate-900 p-2 flex items-center justify-center font-mono text-[10px] text-center bg-slate-50">
+                <div className="h-28 w-28 border-2 border-slate-900 p-2 flex items-center justify-center font-mono text-xs text-center bg-slate-50">
                   [SIMULATED 2FA TOTP QR CODE MATRIX]
                 </div>
-                <div className="text-[11px] font-mono text-slate-600">
+                <div className="text-xs font-mono text-slate-600">
                   Secret: <strong>PF-2026-X89K-M2V9</strong>
                 </div>
               </div>
@@ -218,7 +218,7 @@ export function AccountSecurityCenter({
                   <Smartphone className="h-3.5 w-3.5 text-purple-600" />
                   <span>SMS Milestone Alerts &amp; PDF Links</span>
                 </div>
-                <p className="text-[11px] text-[var(--color-text-muted)] mt-0.5">
+                <p className="text-xs text-[var(--color-text-muted)] mt-0.5">
                   Receive text notifications when new personalized dossiers finish rendering.
                 </p>
               </div>
@@ -248,7 +248,7 @@ export function AccountSecurityCenter({
                 </button>
               </div>
               {smsPingStatus && (
-                <div className="mt-2 text-[11px] font-mono text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 p-2 rounded border border-emerald-200 dark:border-emerald-800">
+                <div className="mt-2 text-xs font-mono text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 p-2 rounded border border-emerald-200 dark:border-emerald-800">
                   {smsPingStatus}
                 </div>
               )}
@@ -261,7 +261,7 @@ export function AccountSecurityCenter({
                   <Mail className="h-3.5 w-3.5 text-blue-600" />
                   <span>Weekly Curated Consumer Digest</span>
                 </div>
-                <p className="text-[11px] text-[var(--color-text-muted)] mt-0.5">
+                <p className="text-xs text-[var(--color-text-muted)] mt-0.5">
                   Weekly personalized bio-longevity and financial trajectory insights.
                 </p>
               </div>

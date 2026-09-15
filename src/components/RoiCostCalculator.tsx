@@ -135,7 +135,7 @@ export function RoiCostCalculator({ isOpen, onClose }: RoiCostCalculatorProps) {
                 onChange={(e) => setMonthlyReports(Number(e.target.value))}
                 className="w-full accent-blue-600"
               />
-              <div className="flex justify-between text-[11px] text-[var(--color-text-muted)] mt-1">
+              <div className="flex justify-between text-xs text-[var(--color-text-muted)] mt-1">
                 <span>200</span>
                 <span>25,000</span>
                 <span>50,000</span>
@@ -161,7 +161,7 @@ export function RoiCostCalculator({ isOpen, onClose }: RoiCostCalculatorProps) {
                 onChange={(e) => setAvgArpu(Number(e.target.value))}
                 className="w-full accent-emerald-600"
               />
-              <div className="flex justify-between text-[11px] text-[var(--color-text-muted)] mt-1">
+              <div className="flex justify-between text-xs text-[var(--color-text-muted)] mt-1">
                 <span>$10 (Basic)</span>
                 <span>$100</span>
                 <span>$200 (Executive)</span>
@@ -187,7 +187,7 @@ export function RoiCostCalculator({ isOpen, onClose }: RoiCostCalculatorProps) {
                 onChange={(e) => setConversionRate(Number(e.target.value))}
                 className="w-full accent-purple-600"
               />
-              <div className="flex justify-between text-[11px] text-[var(--color-text-muted)] mt-1">
+              <div className="flex justify-between text-xs text-[var(--color-text-muted)] mt-1">
                 <span>0.5% (Cold)</span>
                 <span>7.5%</span>
                 <span>15.0% (High-Intent)</span>
@@ -213,7 +213,7 @@ export function RoiCostCalculator({ isOpen, onClose }: RoiCostCalculatorProps) {
                 onChange={(e) => setManualTimeMinutes(Number(e.target.value))}
                 className="w-full accent-amber-600"
               />
-              <div className="flex justify-between text-[11px] text-[var(--color-text-muted)] mt-1">
+              <div className="flex justify-between text-xs text-[var(--color-text-muted)] mt-1">
                 <span>5 mins</span>
                 <span>30 mins</span>
                 <span>60 mins</span>

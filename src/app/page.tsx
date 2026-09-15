@@ -346,7 +346,7 @@ export default function PersonaFlowApp() {
               {/* Studio Grid: Persona Configurator on Left, PDF Dossier Viewer on Right */}
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 {/* Left: Persona Studio Profile Builder */}
-                <div className="lg:col-span-6 space-y-6">
+                <div className="lg:col-span-7 space-y-6">
                   <div className="p-4 rounded-xl bg-blue-50/60 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-900 text-xs text-blue-800 dark:text-blue-300 flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <Cpu className="h-4 w-4 text-blue-600 shrink-0" />
@@ -355,7 +355,7 @@ export default function PersonaFlowApp() {
                       </span>
                     </div>
                     {chaosActive && (
-                      <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-rose-600 text-white animate-pulse">
+                      <span className="px-2 py-0.5 rounded text-xs font-bold bg-rose-600 text-white animate-pulse">
                         CHAOS FAILOVER ENGAGED
                       </span>
                     )}
@@ -371,13 +371,14 @@ export default function PersonaFlowApp() {
                 </div>
 
                 {/* Right: Polished PDF Dossier Preview */}
-                <div className="lg:col-span-6">
-                  {generatedReport ? (
-                    <PdfReportPreview
-                      report={generatedReport}
-                      onLogEvent={(msg) => addLog("PDF", msg)}
-                    />
-                  ) : (
+                <div className="lg:col-span-5">
+                  <div className="sticky top-20">
+                    {generatedReport ? (
+                      <PdfReportPreview
+                        report={generatedReport}
+                        onLogEvent={(msg) => addLog("PDF", msg)}
+                      />
+                    ) : (
                     <div className="h-96 rounded-2xl border-2 border-dashed border-[var(--color-border)] flex flex-col items-center justify-center p-8 text-center bg-[var(--color-panel)]">
                       <div className="p-3 rounded-full bg-blue-50 text-blue-600 dark:bg-blue-950 dark:text-blue-400 mb-3">
                         <FileText className="h-6 w-6" />
@@ -391,6 +392,7 @@ export default function PersonaFlowApp() {
                       </p>
                     </div>
                   )}
+                  </div>
                 </div>
               </div>
             </div>

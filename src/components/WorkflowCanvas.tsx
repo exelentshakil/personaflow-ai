@@ -200,17 +200,17 @@ export function WorkflowCanvas({
                       NODE 0{node.id}
                     </span>
                     {isPast ? (
-                      <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
+                      <span className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
                         <CheckCircle className="h-3.5 w-3.5" />
                         PASSED
                       </span>
                     ) : isCurrent && isRunning ? (
-                      <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-blue-600 animate-pulse">
+                      <span className="inline-flex items-center gap-1 text-xs font-semibold text-blue-600 animate-pulse">
                         <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
                         ACTIVE
                       </span>
                     ) : (
-                      <span className="text-[11px] font-mono text-[var(--color-text-muted)]">
+                      <span className="text-xs font-mono text-[var(--color-text-muted)]">
                         STANDBY
                       </span>
                     )}
